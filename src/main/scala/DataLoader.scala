@@ -4,8 +4,10 @@ import org.apache.spark.sql.SQLContext
 import org.apache.spark.sql.functions._
 
 object DataLoader {
-	val DRIVER = "org.postgresql.Driver"
-	val URL = "jdbc:postgresql://localhost/campaign?user=ds2&password=hadoop123"
+	//val DRIVER = "org.postgresql.Driver"
+	//val URL = "jdbc:postgresql://localhost/campaign?user=ds2&password=hadoop123"
+	val DRIVER = "om.mysql.jdbc.Driver"
+	val URL = "jdbc:mysql://db-hackathon.c3ctvtncfc4b.ap-southeast-2.rds.amazonaws.com/hackathon?user=hadoop&password=AFFDFF2012"
 
 	def main(args:Array[String]) = {
 
