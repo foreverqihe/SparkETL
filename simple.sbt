@@ -9,7 +9,8 @@ lazy val commonSettings = Seq(
 	libraryDependencies ++= Seq(
     "org.apache.spark" %% "spark-core" % "1.4.0",
     "org.apache.spark" %% "spark-sql" % "1.4.0",
-    "org.postgresql" % "postgresql" % "9.3-1103-jdbc41"
+    "org.postgresql" % "postgresql" % "9.3-1103-jdbc41",
+	"mysql" % "mysql-connector-java" % "5.1.36"
    )
 )
 
