@@ -6,7 +6,7 @@ import org.apache.spark.sql.functions._
 object DataLoader {
 	//val DRIVER = "org.postgresql.Driver"
 	//val URL = "jdbc:postgresql://localhost/campaign?user=ds2&password=hadoop123"
-	val DRIVER = "om.mysql.jdbc.Driver"
+	val DRIVER = "com.mysql.jdbc.Driver"
 	val URL = "jdbc:mysql://db-hackathon.c3ctvtncfc4b.ap-southeast-2.rds.amazonaws.com/hackathon?user=hadoop&password=AFFDFF2012"
 
 	def main(args:Array[String]) = {
@@ -25,12 +25,12 @@ object DataLoader {
 				//"numPartitions" -> "1"
 		//	)
 
-		val tables = Map("\"CUSTOMER\"" -> "\"CUSTOMER_ID\"",
-						 "\"PRODUCT\"" -> "\"PRODUCT_ID\"",
-						 "\"CAMPAIGN\"" -> "\"CAMPAIGN_ID\"",
-						 "\"CONTACT_HISTORY\"" -> "\"HISTORY_ID\"",
-						 "\"RESPONSE\"" -> "\"RESPONSE_ID\"",
-						 "\"SERVICE\"" -> "\"SERVICE_ID\""
+		val tables = Map("CUSTOMER" -> "CUSTOMER_ID",
+						 "PRODUCT" -> "PRODUCT_ID",
+						 "CAMPAIGN" -> "CAMPAIGN_ID",
+						 "CONTACT_HISTORY" -> "HISTORY_ID",
+						 "RESPONSE" -> "RESPONSE_ID",
+						 "SERVICE" -> "SERVICE_ID"
 			)
 		tables.foreach{(table: (String, String)) => 
 				val options = Map(
