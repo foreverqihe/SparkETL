@@ -43,7 +43,7 @@ object DataLoader {
 				val jdbcDataFrame = sqlContext.read.format("jdbc").options(options).load()
 				//jdbcDataFrame.registerTempTable(table._1)
 				jdbcDataFrame.write.parquet("hdfs:///user/hadoop/parquet_files/" + table._1)
-				//val results = sqlContext.sql("SELECT count(firstname) FROM customers WHERE customerid < 10 order by customerid")
+				//val results = sqlContext.sql("SELECT first_name, last_name FROM customer WHERE row_id < 10 order by customer_id")
 				//results.map(t => "firstname: " + t(0) + " lastname: " + t(1)).collect().foreach(println)
 			}
 

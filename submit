@@ -1,1 +1,7 @@
+# Clear the HDFS first, to be done in Scala code
+
+/root/ephemeral-hdfs/bin/hadoop fs -rmr /user/hadoop &
+pid=$!
+wait $pid 
+
 ~/spark/bin/spark-submit --packages "com.typesafe.scala-logging:scala-logging_2.11:3.1.0,ch.qos.logback:logback-classic:1.1.3,mysql:mysql-connector-java:5.1.36" --class "com.servian.spark.DataLoader" --master spark://ec2-54-66-13-249.ap-southeast-2.compute.amazonaws.com:7077 target/scala-2.10/data-loader_2.10-1.0.jar
